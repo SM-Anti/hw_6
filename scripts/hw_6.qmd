@@ -1,5 +1,6 @@
 ---
 title: "hw_6"
+bibliography: references.bib
 format: pdf
 execute: 
   eval: true
@@ -29,3 +30,11 @@ library(here)
 star<- import(here('data','star.csv'))
 head(star)
 ```
+
+### Commit 2
+
+@nabi2018
+
+[@cabán2023; @thompson2021 ]
+
+# References
