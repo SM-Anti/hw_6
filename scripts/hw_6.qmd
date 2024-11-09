@@ -33,8 +33,6 @@ head(star)
 
 ### Commit 2
 
-@nabi2018
-
-[@cabán2023; @thompson2021 ]
+Today's group meeting discussed the following. 1. Group by ID, select ID response time @nabi2018. For Scatter plot. what questions should we ask? Example: What is the relationship between error and response time? [@cabán2023; @thompson2021]. What is the position of the cycle and the relationship from that to the response time?
 
 # References
