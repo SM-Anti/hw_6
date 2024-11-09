@@ -20,7 +20,7 @@ library(tidyverse)
 library(janitor)
 library(rio)
 library(dplyr)
-library(here)
+library(here) 
 ```
 
 #### Code to load data
@@ -28,7 +28,8 @@ library(here)
 ```{r}
 #load star.csv data
 star<- import(here('data','star.csv'))
-head(star)
+head(star) 
+#head displays first 5 rows only. View(star) displas entire df
 ```
 
 ### Commit 2
