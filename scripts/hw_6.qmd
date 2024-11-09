@@ -1,0 +1,31 @@
+---
+title: "hw_6"
+format: pdf
+execute: 
+  eval: true
+  echo: false
+fig-width: 6.5
+fig-height: 8
+editor: visual
+---
+
+## Commit 1
+
+#### Load libraries
+
+```{r}
+#Load libraries
+library(tidyverse)
+library(janitor)
+library(rio)
+library(dplyr)
+library(here)
+```
+
+#### Code to load data
+
+```{r}
+#load star.csv data
+star<- import(here('data','star.csv'))
+head(star)
+```
