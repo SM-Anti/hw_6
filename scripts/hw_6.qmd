@@ -36,4 +36,27 @@ head(star)
 
 Today's group meeting discussed the following. 1. Group by ID, select ID response time @nabi2018. For Scatter plot. what questions should we ask? Example: What is the relationship between error and response time? [@cabán2023; @thompson2021]. What is the position of the cycle and the relationship from that to the response time?
 
+### **Commit 3**
+
+1.  Write the code to create the summary statistics shown in the table below. Output the table below and briefly describe it in text.
+
+### Commit 4 
+
+Create the following plot, using whatever theme you’d like, and briefly discuss it in text. (Note that might need to problem-solve how to put the legend at the bottom.)
+
+A: got everything to be similar aside from the difference in color of FRL yes and no, but this says basically the same thing. We see that there isn't a huge difference in math scores based on number of teachers experience until you get to around 24 years of experience, there is no longer a math score under 423. However since there are only two teachers above 24 years of teaching experience compared with under 24, I wouldn't hold too much weight in this observation. As with the FRL lines, we see that when kids receive FRL, they tend to have lower math scores on average then kids who pay for lunch regardless of their respective teachers experience. 
+
+
+```{r}
+stardf <- star %>% 
+  ggplot(aes(x= totexp, y= tmathss)) +
+  geom_point(color = 'grey') +
+  geom_smooth(aes(color = frl), method = 'lm') +
+  labs(x= 'Teacher Experience (years)', y= 'Total Math Scale Score', title = 'Relation between teacher experience and math scores', subtitle = 'Separate regression lines displayed by free/reduced price lunch status', color = 'Lunch Status') +
+  scale_color_discrete(limits = c('yes', 'no'), labels = c('Free/Reduced Price Meals', 'Paid Meals')) +
+  theme(legend.position = 'bottom')
+print(stardf)
+```
+
+
 # References
