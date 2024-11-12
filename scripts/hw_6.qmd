@@ -40,7 +40,8 @@ Today's group meeting discussed the following. 1. Group by ID, select ID respons
 
 1.  Write the code to create the summary statistics shown in the table below. Output the table below and briefly describe it in text.
 
-<<<<<<< Updated upstream
+\<\<\<\<\<\<\< Updated upstream
+
 ```{r}
 
 library(dplyr)
@@ -70,9 +71,9 @@ print(result)
 
 ```
 
-=======
->>>>>>> Stashed changes
 ### Commit 4
+
+#### ====\>\>\> Stashed changes to Commit 4
 
 Create the following plot, using whatever theme you’d like, and briefly discuss it in text. (Note that might need to problem-solve how to put the legend at the bottom.)
 
