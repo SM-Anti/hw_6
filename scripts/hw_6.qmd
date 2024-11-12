@@ -40,12 +40,40 @@ Today's group meeting discussed the following. 1. Group by ID, select ID respons
 
 1.  Write the code to create the summary statistics shown in the table below. Output the table below and briefly describe it in text.
 
-### Commit 4 
+```{r}
+
+library(dplyr)
+
+# I made a group based on whether the person has "yes" or "no" in the frl column
+result <- star %>%
+  group_by(sex, frl) %>%                
+  summarise(
+    math_mean = mean(tmathss),    # mean of tmathss
+    math_sd = sd(tmathss),       # standard deviation of tmathss
+    rdg_mean = mean(treadss),    # mean of tread_ss
+    rdg_sd = sd(treadss),       # standard deviation of tread_ss
+    .groups = "drop"                    # Drop the grouping 
+  ) %>%
+  arrange(sex, frl) %>%                 # Then I arranged the data by sex and frl
+  mutate(
+    # I rounded all of the columns to 2 decimals
+    math_mean = round(math_mean, 2),
+    math_sd = round(math_sd, 2),
+    rdg_mean = round(rdg_mean, 2),
+    rdg_sd = round(rdg_sd, 2)
+  )
+
+# View the result
+print(result)
+
+
+```
+
+### Commit 4
 
 Create the following plot, using whatever theme you’d like, and briefly discuss it in text. (Note that might need to problem-solve how to put the legend at the bottom.)
 
-A: got everything to be similar aside from the difference in color of FRL yes and no, but this says basically the same thing. We see that there isn't a huge difference in math scores based on number of teachers experience until you get to around 24 years of experience, there is no longer a math score under 423. However since there are only two teachers above 24 years of teaching experience compared with under 24, I wouldn't hold too much weight in this observation. As with the FRL lines, we see that when kids receive FRL, they tend to have lower math scores on average then kids who pay for lunch regardless of their respective teachers experience. 
-
+A: got everything to be similar aside from the difference in color of FRL yes and no, but this says basically the same thing. We see that there isn't a huge difference in math scores based on number of teachers experience until you get to around 24 years of experience, there is no longer a math score under 423. However since there are only two teachers above 24 years of teaching experience compared with under 24, I wouldn't hold too much weight in this observation. As with the FRL lines, we see that when kids receive FRL, they tend to have lower math scores on average then kids who pay for lunch regardless of their respective teachers experience.
 
 ```{r}
 stardf <- star %>% 
@@ -57,6 +85,5 @@ stardf <- star %>%
   theme(legend.position = 'bottom')
 print(stardf)
 ```
-
 
 # References
